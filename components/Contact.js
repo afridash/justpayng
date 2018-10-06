@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import { Container, Content, Header, Card, CardItem, Thumbnail, Text, Left, Body, Right, Button, Icon, Title } from 'native-base';
-import { FlatList, ListItem, View, Image, StyleSheet, TouchableHighlight } from "react-native";
+import { Container, Content, Header, Card, CardItem, Thumbnail, Text, Left, Body, Right, Button, Icon, Title,  } from 'native-base';
+import { FlatList, ListItem, View, Image, StyleSheet, TouchableHighlight,AsyncStorage } from "react-native";
 import Contacts from 'react-native-contacts';
 import {Actions} from 'react-native-router-flux';
-//import Footer from './Footer';
-
-
+import firebase from 'react-native-firebase';
 
 
 export default class Contact extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       loading: false,
       users: [
@@ -103,6 +100,25 @@ export default class Contact extends Component {
       ],
 
     };
+    this.ref = firebase.database().ref('users').child('+2349037233559')
+  }
+  componentDidMount () {
+    firebase.messaging().getToken()
+      .then(fcmToken => {
+        if (fcmToken) {
+            this.ref.update({pushToken:fcmToken});
+            AsyncStorage.setItem('token', fcmToken);
+        } else {
+          // user doesn't have a device token yet
+      }
+  });
+  this.notificationOpenedListener = firebase.notifications().onNotificationOpened((notificationOpen: NotificationOpen) => {
+      // Get the action triggered by the notification being opened
+      const action = notificationOpen.action;
+      // Get information about the notification that was opened
+      const notification: Notification = notificationOpen.notification;
+      Actions.validateMerchant({payee:'Ogiriki Mabel', operation_type:'pay', amount:"50,000"})
+  });
   }
   render() {
     return (

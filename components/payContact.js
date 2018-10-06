@@ -15,13 +15,17 @@ export default class PayContact extends Component {
   addDigit (digit) {
     this.setState({amount:this.state.amount+digit, length:this.state.length + 1})
   }
-  confirm = () => {
-    alert("Paying " + this.state.amount)
+  removeDigit = () => {
+    if (this.state.length > 0) {
+      let amount = this.state.amount.substring(0, this.state.amount.length-1)
+      this.setState({amount, length:this.state.length - 1})
+    }
+
   }
   render () {
     return (
       <View style={styles.container}>
-        <Button transparent style={{marginTop:10}} >
+        <Button onPress={()=>Actions.pop()} transparent style={{marginTop:10}} >
           <Icon name="chevron-left" type="FontAwesome" style={{fontSize:18, color:'white'}} />
         </Button>
       <StatusBar barStyle="light-content" />
@@ -90,8 +94,8 @@ export default class PayContact extends Component {
           </View>
         </View>
         <View style={{flexDirection:'row', justifyContent:'space-around', marginBottom:10}}>
-          <Button info><Text> REQUEST </Text></Button>
-          <Button success onPress={()=>Actions.validateMerchant({payee:this.props.payee})}><Text> PAY </Text></Button>
+          <Button info onPress={()=>Actions.validateMerchant({payee:this.props.payee, operation_type:'request', amount:this.state.amount})}><Text> REQUEST </Text></Button>
+          <Button success onPress={()=>Actions.validateMerchant({payee:this.props.payee, operation_type:'pay', amount:this.state.amount})}><Text> PAY </Text></Button>
         </View>
       </View>
     )

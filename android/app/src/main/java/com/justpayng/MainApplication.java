@@ -7,6 +7,7 @@ import cc.rocwang.aescrypto.AesCryptoPackage;
 import org.reactnative.camera.RNCameraPackage;
 import com.rt2zz.reactnativecontacts.ReactNativeContacts;
 import com.hieuvp.fingerprint.ReactNativeFingerprintScannerPackage;
+import io.invertase.firebase.database.RNFirebaseDatabasePackage;
 import io.invertase.firebase.RNFirebasePackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -37,7 +38,8 @@ public class MainApplication extends Application implements ReactApplication {
             new RNFirebasePackage(),
               new RNFirebaseAuthPackage(),
               new RNFirebaseMessagingPackage(),
-              new RNFirebaseNotificationsPackage()
+              new RNFirebaseNotificationsPackage(),
+              new RNFirebaseDatabasePackage()
       );
     }
 

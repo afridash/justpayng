@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, Card, CardItem, Button,Left, Right, Text, Body } from "native-base";
 import {FlatList, StyleSheet, View} from 'react-native';
-import {Actions} from 'react-native-router-flux'
+import {Actions} from 'react-native-router-flux';
 
 export default class Requests extends Component {
 
@@ -10,16 +10,16 @@ export default class Requests extends Component {
 
     this.state = {
       data:[
-        {key: 'John Sam'},
-        {key: 'Amaka Eze'},
-        {key: 'Preye Ebi'},
-        {key: 'Joel Tari'},
+        {key: 'John Sam', amount:"60,000"},
+        {key: 'Amaka Eze', amount:"12,000"},
+        {key: 'Preye Ebi', amount:"2,000,000"},
+        {key: 'Joel Tari', amount:"10,000"},
       ],
     }
   }
 
   declineRequest = (item) =>{
-    let items = this.state.data.filter((it) => it !== item)
+    let items = this.state.data.filter((it) => it.key !== item.key)
     this.setState({data:items})
 
   }
@@ -33,23 +33,19 @@ export default class Requests extends Component {
             ({item}) =>
           <Card>
             <CardItem>
-              <Text>Request: Time</Text>
-            </CardItem>
-            <CardItem>
-              <Left>
-                  <Text>{item.key}</Text>
-              </Left>
               <Body>
-                <Button success
-                onPress = {()=>Actions.payContact({payee:item.key})}><Text> PAY </Text></Button>
+                <Text style={{fontSize:18, fontWeight:'600'}}>{item.key} requested for: NGN {item.amount}</Text>
+                <View style={{flex:1, flexDirection:'row', alignItems:'space-between'}}>
+                  <View style={{margin:10}}>
+                    <Button success
+                    onPress = {()=>Actions.validateMerchant({payee:item.key, operation_type:'pay', amount:item.amount})}><Text> PAY </Text></Button>
+                  </View>
+                  <View style={{margin:10}}>
+                    <Button transparent
+                    onPress = {()=>this.declineRequest(item)}><Text style={{color:'red'}}> DECLINE </Text></Button>
+                  </View>
+                </View>
               </Body>
-              <Right>
-                <Button danger
-                onPress = {()=>this.declineRequest(item)}><Text> DECLINE </Text></Button>
-              </Right>
-            </CardItem>
-            <CardItem>
-              <Text>Requested for: NGN 12,000</Text>
             </CardItem>
           </Card>
           }

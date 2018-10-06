@@ -9,6 +9,7 @@ target 'justpayng' do
   pod 'Firebase/Core', '~> 5.9.0'
   pod 'Firebase/Auth', '~> 5.9.0'
   pod 'Firebase/Messaging', '~> 5.9.0'
+  pod 'Firebase/Database', '~> 5.9.0'
   target 'justpayng-tvOSTests' do
     inherit! :search_paths
     # Pods for testing

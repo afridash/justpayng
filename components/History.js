@@ -13,7 +13,12 @@ export default class Contacts extends Component {
   render () {
     return (
       <Container>
-        <Tabs>
+        <Header >
+          <Title>
+            Activities
+          </Title>
+        </Header>
+          <Tabs>
           <Tab heading="Requests">
             <Requests />
           </Tab>

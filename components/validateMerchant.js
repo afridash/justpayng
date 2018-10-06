@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, StatusBar, TouchableHighlight, Alert} from 'react-native';
-import {Text, Label, Icon, Button, Image} from 'native-base';
+import {Text, Label, Icon, Button, Image, AsyncStorage} from 'native-base';
 import {Actions} from 'react-native-router-flux';
 import Fingerprint from './Finger';
+import firebase from 'react-native-firebase';
 export default class validateMerchant extends Component {
   constructor (props) {
     super(props)
@@ -12,7 +13,8 @@ export default class validateMerchant extends Component {
       length:0,
       temp:'',
       instruction:'Enter Pin',
-      authenticated:true
+      authenticated:true,
+      token:''
     }
   }
   show () {
@@ -25,6 +27,11 @@ export default class validateMerchant extends Component {
   ],
   { cancelable: false }
 )
+  }
+  async componentDidMount () {
+    let {token} = this.state
+    token = await AsyncStorage.getItem('token')
+    this.setState({token})
   }
   addDigit (digit) {
     if (this.state.length < 4 && !this.state.confirming) {
@@ -58,12 +65,26 @@ export default class validateMerchant extends Component {
     }
   }
   handlePopupDismissed = (status) => {
-    if (status) {
+    if (status && this.props.operation_type === 'pay') {
       return Actions.Processing({payee:this.props.payee})
-    } else {
+    } else if (status && this.props.operation_type === 'request') {
+      this.sendRequest()
+    }else {
       this.setState({authenticated:false})
     }
 
+  }
+  sendRequest = () => {
+    var data = {
+      uid:'+2349037233559',
+      name:'Ikuromor Ogiriki',
+      recipient:'Richard Igbiriki',
+      amount:this.props.amount,
+      token:"cL8L2udhw1g:APA91bFawEz_zgjOJpnrbFV7GxDJwDcXEeqs-5e9sim_mulYcz7GW5mICCWUODJsA7d8H7mNEyad87tDaBlJaVad4MDUbQ7yMjaFTw6-2IMHZkO3qaaBfDK4yB0GIeohhOFGwrUfoJLG"
+    }
+    firebase.database().ref('requests').push(data)
+    Alert.alert('Request Sent', "Successfully sent request to " + this.props.payee)
+    Actions.Contacts()
   }
   render () {
     return (
@@ -132,9 +153,15 @@ export default class validateMerchant extends Component {
         <View style={styles.buttonContainer}>
             {this.state.authenticated && <Fingerprint handlePopupDismissed={this.handlePopupDismissed} />}
             <View >
-              <TouchableHighlight onPress={Actions.Processing} >
-                <Text style={styles.button}> PAY </Text>
+              {this.props.operation_type === 'request' ?
+              <TouchableHighlight onPress={this.sendRequest} >
+                <Text style={styles.button}> CONFIRM REQUEST </Text>
               </TouchableHighlight>
+            : <TouchableHighlight onPress={() => Actions.Processing({payee:this.props.payee})} >
+              <Text style={styles.button}> PAY </Text>
+            </TouchableHighlight>
+          }
+
             </View>
 
         </View>

@@ -139,6 +139,7 @@ android {
 dependencies {
     implementation project(':react-native-aes-kit')
     implementation "com.google.firebase:firebase-messaging:17.3.2"
+    implementation "com.google.firebase:firebase-database:16.0.2"
     implementation 'me.leolin:ShortcutBadger:1.1.21@aar'
     implementation project(':react-native-contacts')
     implementation project(':react-native-fingerprint-scanner')

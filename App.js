@@ -80,14 +80,14 @@ export default class App extends Component<Props> {
                   key="Contacts"
                   initial
                   tab="Contacts"
-                  icon="dollar"
+                  icon="address-book"
                   component={Contact}
                   hideNavBar={true}
                 />
                 <Scene
                   tab="Settings"
                   key="Settings"
-                  icon="user"
+                  icon="cog"
                   hideNavBar={true}
                   component={Settings}
                 />

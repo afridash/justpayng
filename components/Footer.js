@@ -8,7 +8,9 @@ import platform from '../native-base-theme/variables/platform';
 export default class Footer_Component extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      selected:"Contacts"
+    };
   }
   render() {
     const tabs = [];
@@ -18,11 +20,11 @@ export default class Footer_Component extends Component {
         <Button
           key={params.tab}
           vertical
-          active={_.includes(Actions.currentScene, params.tab)}
-          onPress={() => Actions[params.tab]()}
+          active={this.state.selected === params.tab}
+          onPress={() => {this.setState({selected:params.tab});Actions[params.tab]()}}
           badge={params.badge}
         >
-          <Icon type="FontAwesome"  name={params.icon} />
+          <Icon type="FontAwesome" name={params.icon} />
         </Button>
       );
     })
@@ -30,7 +32,7 @@ export default class Footer_Component extends Component {
       <StyleProvider style={getTheme(platform)}>
       <Footer>
         <FooterTab>
-          {tabs}
+        {tabs}
         </FooterTab>
       </Footer>
     </StyleProvider>

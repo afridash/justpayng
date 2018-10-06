@@ -6,8 +6,16 @@ export default class Bank extends Component {
   constructor (props) {
     super(props)
     this.state = {
-       selected: undefined
+       selected: undefined,
+       banks:[]
     }
+    this.banks = []
+  }
+  componentDidMount () {
+    fetch('https://ravesandboxapi.flutterwave.com/banks').then(res => res.json()).then(data => {
+      this.banks = data.data
+      this.setState({banks:this.banks})
+    })
   }
   onValueChange(value: string) {
    this.setState({
@@ -37,11 +45,10 @@ export default class Bank extends Component {
                       selectedValue={this.state.selected}
                       onValueChange={this.onValueChange.bind(this)}
                     >
-                      <Picker.Item label="First Bank" value="key0" />
-                      <Picker.Item label="Sterling Bank" value="key1" />
-                      <Picker.Item label="Union Bank" value="key2" />
-                      <Picker.Item label="Stanbic IBTC Bank" value="key3" />
-                      <Picker.Item label="Zenith Bank" value="key4" />
+                      {this.state.banks.map((bank, key)=>
+                        <Picker.Item key={key} label={bank.name} value={bank.code} />
+                      )}
+
                 </Picker>
               </View>
               <View style={styles.input}>
