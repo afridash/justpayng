@@ -25,6 +25,8 @@ import CardAdded from './components/Card-added'
 import Fetching from './components/Fetching'
 import Merchant from './components/Merchant'
 import Amount from './components/Amount'
+import Profile from './components/Profile'
+
 const reducerCreate = params => {
   const defaultReducer = new Reducer(params);
   return (state, action) => {
@@ -46,7 +48,7 @@ export default class App extends Component<Props> {
                 hideNavBar
                 key="root"
               >
-                <Scene key='index' initial component={Index} />
+                <Scene key='index'  component={Index} />
                 {/* <Scene key='Camera' component={Camera} /> */}
                 <Scene key='Signup' component={Signup} />
                 <Scene key='Setpin' component={Setpin} />
@@ -57,6 +59,7 @@ export default class App extends Component<Props> {
                 <Scene key="Fetch" component={Fetching} />
                 <Scene key="Merchant" component={Merchant} />
                 <Scene key="Amount" component={Amount} />
+                <Scene key="Profile" initial component={Profile} />
                 <Scene
                   key="footer"
                   hideNavBar={true}
