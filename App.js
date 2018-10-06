@@ -11,7 +11,7 @@ import {
   Lightbox
 } from 'react-native-router-flux'
 import Index from './components/Index'
-//import Camera from './components/Camera'
+import Camera from './components/Camera'
 import Footer from './components/Footer'
 import Contacts from './components/Contacts'
 import History from './components/History'
@@ -47,7 +47,7 @@ export default class App extends Component<Props> {
                 key="root"
               >
                 <Scene key='index' initial component={Index} />
-                {/* <Scene key='Camera' component={Camera} /> */}
+                <Scene key='Camera' component={Camera} />
                 <Scene key='Signup' component={Signup} />
                 <Scene key='Setpin' component={Setpin} />
                 <Scene key="Addcard" component={AddCard} />
@@ -65,7 +65,6 @@ export default class App extends Component<Props> {
                   tabBarComponent={Footer}
                   >
                 <Scene
-                  initial
                   key="History"
                   tab="History"
                   icon="history"
