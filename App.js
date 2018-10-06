@@ -59,12 +59,12 @@ export default class App extends Component<Props> {
                 <Scene key="OTP"  component={CardOtp} />
                 <Scene key="Processing" component={Processing} />
                 <Scene key="CardAdded" component={CardAdded} />
-                <Scene key="Fetch" component={Fetching} />
-                <Scene key="Merchant"  component={Merchant} />
+                <Scene key="Fetch"  component={Fetching} />
+                <Scene key="Merchant"   component={Merchant} />
                 <Scene key="Amount" component={Amount} />
                 <Scene key="Profile"  component={Profile} />
                 <Scene key="Bank"  component={Bank} />
-                <Scene key="payMerchant"  initial component={payMerchant} />
+                <Scene key="payMerchant"     component={payMerchant} />
                 <Scene key="validateMerchant"   component={validateMerchant} />
                 <Scene key="payContact"  component={payContact} />
 
@@ -91,6 +91,7 @@ export default class App extends Component<Props> {
                   hideNavBar={true}
                 />
                 <Scene
+                  initial
                   tab="Settings"
                   key="Settings"
                   icon="user"
