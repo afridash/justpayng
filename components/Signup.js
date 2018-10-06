@@ -85,7 +85,7 @@ export default class Signup extends Component {
           alert("Errors")
         });
     }
-      return Actions.Profile();
+      return Actions.Bank();
   };
   renderVerificationCodeInput () {
     return (

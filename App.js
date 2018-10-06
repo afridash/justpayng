@@ -18,14 +18,13 @@ import History from './components/History'
 import Settings from './components/Settings'
 import Signup from './components/Signup'
 import Setpin from './components/Set-pin'
-import AddCard from './components/Add-card'
-import CardOtp from './components/Card-Otp'
 import Processing from './components/Processing-card'
 import CardAdded from './components/Card-added'
 import Fetching from './components/Fetching'
 import Merchant from './components/Merchant'
 import Amount from './components/Amount'
 import Profile from './components/Profile'
+import Bank from './components/Bank'
 import payContact from './components/payContact'
 import payMerchant from './components/payMerchant'
 import validateMerchant from './components/validateMerchant'
@@ -48,24 +47,28 @@ export default class App extends Component<Props> {
                 hideNavBar
                 key="root"
               >
-                <Scene key='index' initial component={Index} />
+                <Scene key='index' component={Index} />
+
                 {/* <Scene key='Camera' component={Camera} /> */}
                 <Scene key='Signup' component={Signup} />
                 <Scene key='Setpin' component={Setpin} />
-                <Scene key="Addcard" component={AddCard} />
-                <Scene key="OTP" component={CardOtp} />
                 <Scene key="Processing" component={Processing} />
                 <Scene key="CardAdded" component={CardAdded} />
-                <Scene key="Fetch" component={Fetching} />
-                <Scene key="Merchant" component={Merchant} />
+                <Scene key="Fetch"  component={Fetching} />
+                <Scene key="Merchant"   component={Merchant} />
                 <Scene key="Amount" component={Amount} />
                 <Scene key="Profile" component={Profile} />
+                <Scene key="Bank"  component={Bank} />
+                <Scene key="payMerchant"     component={payMerchant} />
+                <Scene key="validateMerchant"   component={validateMerchant} />
+                <Scene key="payContact"  component={payContact} />
                 <Scene
                   key="footer"
                   hideNavBar={true}
                   tabs={true}
                   tabBarPosition={'bottom'}
                   tabBarComponent={Footer}
+                  initial
                   >
                 <Scene
                   key="History"
@@ -76,12 +79,14 @@ export default class App extends Component<Props> {
                 />
                 <Scene
                   key="Contacts"
+                  initial
                   tab="Contacts"
                   icon="dollar"
                   component={Contacts}
                   hideNavBar={true}
                 />
                 <Scene
+                  initial
                   tab="Settings"
                   key="Settings"
                   icon="user"

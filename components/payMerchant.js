@@ -33,7 +33,7 @@ export default class payMerchant extends Component {
         <View style={styles.container1}>
           <View style={{width:50}}></View>
           <View style={styles.pinContainer}>
-            <Text style={styles.pin}>{this.state.amont}</Text>
+            <Text style={styles.pin}>{this.state.amount}</Text>
           </View>
           {this.state.length > 0 &&
           <Button transparent onPress={this.removeDigit}>
@@ -79,7 +79,7 @@ export default class payMerchant extends Component {
             <TouchableHighlight style={styles.highlight} underlayColor='white' activeOpacity={0.7} onPress={()=>this.addDigit('.')}>
               <Text style={styles.number}>.</Text>
             </TouchableHighlight>
-            <TouchableHighlight style={styles.highlight} underlayColor='white' activeOpacity={0.7} onPress={()=>this.addDigit('0')}>
+            <TouchableHighlight style={styles.highlight1} underlayColor='white' activeOpacity={0.7} onPress={()=>this.addDigit('0')}>
               <Text style={styles.number}>0</Text>
             </TouchableHighlight>
             <Text style={styles.number}></Text>
@@ -87,22 +87,14 @@ export default class payMerchant extends Component {
 
         </View>
 
-        <View style={{flexDirection:'row', justifyContent:'center'}}>
-          <Button info><Text> CONTINUE </Text></Button>
-        </View>
+
 
         <View style={styles.buttonContainer}>
-          {this.state.length > 0 &&
-            <View >
-              {this.state.reenter ?
-                <TouchableHighlight onPress={this.confirm} >
-                <Text style={styles.button}> Confirm </Text>
-              </TouchableHighlight> :
-              <TouchableHighlight onPress={this.reEnterPassword} >
-                <Text style={styles.button}> Continue </Text>
-              </TouchableHighlight>}
-            </View>
-        }
+          <View >
+            <TouchableHighlight onPress={Actions.validateMerchant} >
+              <Text style={styles.button}> Continue </Text>
+            </TouchableHighlight>
+          </View>
         </View>
       </View>
     )
@@ -160,6 +152,14 @@ const styles = StyleSheet.create({
   },
   highlight:{
     alignItems:'center',
+    justifyContent:'center',
+    padding:10,
+    height:70,
+    width:70,
+    borderRadius:35,
+  },
+  highlight1:{
+    marginRight:40,
     justifyContent:'center',
     padding:10,
     height:70,

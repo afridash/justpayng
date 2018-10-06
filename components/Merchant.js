@@ -38,7 +38,7 @@ export default class Loading extends Component {
           <View style={{flex:0.5}}></View>
         </View>
         <View style={styles.button}>
-          <Button primary onPress={Actions.Amount}><Text> Continue </Text></Button>
+          <Button primary onPress={Actions.payMerchant}><Text> Continue </Text></Button>
         </View>
       </View>
     )

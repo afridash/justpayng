@@ -11,6 +11,6 @@ export default class Processing extends Component {
     }, 6000)
   }
   render(){
-    return <Loading message="Processing Card" />
+    return <Loading message="Paying Taiwo and Sons Ltd" />
   }
 }

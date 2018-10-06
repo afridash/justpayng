@@ -13,8 +13,8 @@ export default class CardAdded extends Component {
         <StatusBar barStyle="light-content" />
         <View style={styles.header}>
           <Icon type="FontAwesome" name="thumbs-up" style={styles.icon} />
-          <Text style={styles.title}>Card Successfully Added</Text>
-          <Text style={styles.subtitle}>The sum of NGN 10.00 has been deducted from your account for verification purposes.</Text>
+          <Text style={styles.title}>Payment Successful! </Text>
+          <Text style={styles.subtitle}>Payment to Taiwo and Sons was completed successfully</Text>
         </View>
         <View style={styles.button}>
           <Button primary onPress={Actions.Camera}><Text> Continue </Text></Button>

@@ -7,7 +7,6 @@ export default class Profile extends Component {
     super(props)
     this.state = {}
   }
-
   render () {
     return (
       <View style={styles.container}>
@@ -30,7 +29,7 @@ export default class Profile extends Component {
                     <Text style={styles.subtitle}>
                        Date of birth:
                     </Text>
-                    <Text style={{marginTop:10}}>
+                    <Text  style={{marginTop:10}}>
                        12th October, 1992
                     </Text>
                   </View>
@@ -84,7 +83,6 @@ export default class Profile extends Component {
         <View style={styles.button}>
           <Button primary onPress = {Actions.Setpin}><Text> Continue </Text></Button>
         </View>
-
       </View>
     )
   }

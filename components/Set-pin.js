@@ -14,6 +14,17 @@ export default class Setpin extends Component {
       instruction:'Choose 4 digit pin'
     }
   }
+  show () {
+    Alert.alert(
+  'FingerPrint Authentication',
+  'Allow device to use fingerprint?',
+  [
+    {text: 'Yes', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+    {text: 'NO', onPress: () => console.log('OK Pressed')},
+  ],
+  { cancelable: false }
+)
+  }
   addDigit (digit) {
     if (this.state.length < 4 && !this.state.confirming) {
       this.setState({pin:this.state.pin+digit, length:this.state.length + 1, temp:this.state.temp +'*'})
@@ -46,7 +57,7 @@ export default class Setpin extends Component {
     }
   }
   handlePopupDismissed = () => {
-    return Actions.Addcard()
+    return Actions.Contacts()
   }
   render () {
     return (
@@ -116,7 +127,7 @@ export default class Setpin extends Component {
           {this.state.length === 4 &&
             <View >
               {this.state.reenter ?
-                <TouchableHighlight onPress={this.confirm} >
+                <TouchableHighlight onPress={()=>this.confirm()} >
                 <Text style={styles.button}> Confirm </Text>
               </TouchableHighlight> :
               <TouchableHighlight onPress={this.reEnterPassword} >
