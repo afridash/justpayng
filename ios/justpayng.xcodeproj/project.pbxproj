@@ -27,7 +27,6 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		1C62575B19886C2124E87217 /* libPods-justpayng-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 701AA76333D241C9A2DC7068 /* libPods-justpayng-tvOSTests.a */; };
-		21C5188D2168E34D00F498AE /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C5188C2168E32500F498AE /* libRNCamera.a */; };
 		21F71E7B2166D4A900BBCBE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21F71E7A2166D4A800BBCBE4 /* GoogleService-Info.plist */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -54,6 +53,7 @@
 		ABAB9C6B88066944E2967FD9 /* libPods-justpayngTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F58D9082427B2CBD8F0CC0B6 /* libPods-justpayngTests.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		B2D7B991340E462EB5A28A47 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78E9148450F4425EBE70D493 /* EvilIcons.ttf */; };
+		B573B05C2B0E400DBDD14422 /* libRCTAesCrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC250BD939624319BCE2919B /* libRCTAesCrypto.a */; };
 		B6F06015887F40C68A3D05D1 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2267617FF574E5AA4B8B233 /* MaterialCommunityIcons.ttf */; };
 		BA0FD2D59C7B45A087C42921 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DA95F310DB34809B90027B2 /* FontAwesome.ttf */; };
 		E081121A9B2B4E039B358452 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99C370D3758F438587CC8F89 /* SimpleLineIcons.ttf */; };
@@ -125,12 +125,12 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
-		21C5188B2168E32500F498AE /* PBXContainerItemProxy */ = {
+		21C5197F2169084800F498AE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 21C518872168E32500F498AE /* RNCamera.xcodeproj */;
+			containerPortal = 5539E6B304F34443B217A875 /* RCTAesCrypto.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 4107012F1ACB723B00C6AA39;
-			remoteInfo = RNCamera;
+			remoteGlobalIDString = D8417CB91F41979100E17599;
+			remoteInfo = RCTAesCrypto;
 		};
 		21F71DDB2166A54D00BBCBE4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -380,7 +380,6 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		14C63A5ED69A45B0B33CDD6A /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		1BDD74492A0042649DBDA817 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
-		21C518872168E32500F498AE /* RNCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RNCamera.xcodeproj"; sourceTree = "<group>"; };
 		21C518A52168EA9F00F498AE /* permissions.ios.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = permissions.ios.js; path = "../node_modules/react-native-permissions/lib/permissions.ios.js"; sourceTree = "<group>"; };
 		21C518A72168EAB800F498AE /* libReactNativePermissions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReactNativePermissions.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C519062168ED0800F498AE /* libReactNativePermissions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReactNativePermissions.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -395,6 +394,7 @@
 		3FE8B28501C29FF658B45A33 /* Pods-justpayng-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-justpayng-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-justpayng-tvOSTests/Pods-justpayng-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		447D9E4A5A4145EF967C325B /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/native-base/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		4AB86A3B3B804D9EBBB8DDD0 /* libReactNativeFingerprintScanner.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativeFingerprintScanner.a; sourceTree = "<group>"; };
+		5539E6B304F34443B217A875 /* RCTAesCrypto.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTAesCrypto.xcodeproj; path = "../node_modules/react-native-aes-kit/ios/RCTAesCrypto.xcodeproj"; sourceTree = "<group>"; };
 		57B7CAB5BDF7A059A44A15DD /* Pods-justpayngTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-justpayngTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-justpayngTests/Pods-justpayngTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		69316824F1D84F5EA07F6C8E /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/native-base/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
@@ -414,6 +414,7 @@
 		B95398306B55498EA5FCF685 /* ReactNativeFingerprintScanner.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeFingerprintScanner.xcodeproj; path = "../node_modules/react-native-fingerprint-scanner/ios/ReactNativeFingerprintScanner.xcodeproj"; sourceTree = "<group>"; };
 		C1250765ECD9EF8342C56FEE /* Pods-justpayng-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-justpayng-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-justpayng-tvOSTests/Pods-justpayng-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		D3E399306E7EAABA55D061ED /* Pods-justpayng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-justpayng.debug.xcconfig"; path = "Pods/Target Support Files/Pods-justpayng/Pods-justpayng.debug.xcconfig"; sourceTree = "<group>"; };
+		DC250BD939624319BCE2919B /* libRCTAesCrypto.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTAesCrypto.a; sourceTree = "<group>"; };
 		E2267617FF574E5AA4B8B233 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		E47937761761439197B59701 /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
 		EB35F98F5FD25DEC4AF657BA /* Pods-justpayng.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-justpayng.release.xcconfig"; path = "Pods/Target Support Files/Pods-justpayng/Pods-justpayng.release.xcconfig"; sourceTree = "<group>"; };
@@ -434,7 +435,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21C5188D2168E34D00F498AE /* libRNCamera.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -450,6 +450,7 @@
 				EB891D9F67B94440A3C091DB /* libRNFirebase.a in Frameworks */,
 				09A48859DD50955B4FC66BE9 /* libPods-justpayng.a in Frameworks */,
 				137A4F2A8AA34F9BB559F21A /* libReactNativeFingerprintScanner.a in Frameworks */,
+				B573B05C2B0E400DBDD14422 /* libRCTAesCrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,10 +599,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		21C518882168E32500F498AE /* Products */ = {
+		21C5197C2169084800F498AE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				21C5188C2168E32500F498AE /* libRNCamera.a */,
+				21C519802169084800F498AE /* libRCTAesCrypto.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -611,6 +612,7 @@
 			children = (
 				A65F357BC54A42028DBAE65D /* libRNFirebase.a */,
 				4AB86A3B3B804D9EBBB8DDD0 /* libReactNativeFingerprintScanner.a */,
+				DC250BD939624319BCE2919B /* libRCTAesCrypto.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -700,7 +702,6 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				21C518872168E32500F498AE /* RNCamera.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -715,6 +716,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				B005095A945246B3B6701168 /* RNFirebase.xcodeproj */,
 				B95398306B55498EA5FCF685 /* ReactNativeFingerprintScanner.xcodeproj */,
+				5539E6B304F34443B217A875 /* RCTAesCrypto.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -895,6 +897,10 @@
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 				},
 				{
+					ProductGroup = 21C5197C2169084800F498AE /* Products */;
+					ProjectRef = 5539E6B304F34443B217A875 /* RCTAesCrypto.xcodeproj */;
+				},
+				{
 					ProductGroup = 5E91572E1DD0AC6500FF2AA8 /* Products */;
 					ProjectRef = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
 				},
@@ -941,10 +947,6 @@
 				{
 					ProductGroup = 21F71EAF2167E49100BBCBE4 /* Products */;
 					ProjectRef = B95398306B55498EA5FCF685 /* ReactNativeFingerprintScanner.xcodeproj */;
-				},
-				{
-					ProductGroup = 21C518882168E32500F498AE /* Products */;
-					ProjectRef = 21C518872168E32500F498AE /* RNCamera.xcodeproj */;
 				},
 				{
 					ProductGroup = 21F71DD82166A54C00BBCBE4 /* Products */;
@@ -1018,11 +1020,11 @@
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		21C5188C2168E32500F498AE /* libRNCamera.a */ = {
+		21C519802169084800F498AE /* libRCTAesCrypto.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libRNCamera.a;
-			remoteRef = 21C5188B2168E32500F498AE /* PBXContainerItemProxy */;
+			path = libRCTAesCrypto.a;
+			remoteRef = 21C5197F2169084800F498AE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		21F71DDC2166A54D00BBCBE4 /* libRNFirebase.a */ = {
@@ -1454,11 +1456,15 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 					"$(SRCROOT)/../node_modules/react-native-fingerprint-scanner/ios",
+					"$(SRCROOT)/../node_modules/react-native-aes-kit/ios/RCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = justpayngTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1479,11 +1485,15 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 					"$(SRCROOT)/../node_modules/react-native-fingerprint-scanner/ios",
+					"$(SRCROOT)/../node_modules/react-native-aes-kit/ios/RCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = justpayngTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1507,6 +1517,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 					"$(SRCROOT)/../node_modules/react-native-fingerprint-scanner/ios",
+					"$(SRCROOT)/../node_modules/react-native-aes-kit/ios/RCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = justpayng/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1533,6 +1544,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 					"$(SRCROOT)/../node_modules/react-native-fingerprint-scanner/ios",
+					"$(SRCROOT)/../node_modules/react-native-aes-kit/ios/RCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = justpayng/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1563,10 +1575,14 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 					"$(SRCROOT)/../node_modules/react-native-fingerprint-scanner/ios",
+					"$(SRCROOT)/../node_modules/react-native-aes-kit/ios/RCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = "justpayng-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1595,10 +1611,14 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 					"$(SRCROOT)/../node_modules/react-native-fingerprint-scanner/ios",
+					"$(SRCROOT)/../node_modules/react-native-aes-kit/ios/RCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = "justpayng-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1627,10 +1647,14 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 					"$(SRCROOT)/../node_modules/react-native-fingerprint-scanner/ios",
+					"$(SRCROOT)/../node_modules/react-native-aes-kit/ios/RCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = "justpayng-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1659,10 +1683,14 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
 					"$(SRCROOT)/../node_modules/react-native-fingerprint-scanner/ios",
+					"$(SRCROOT)/../node_modules/react-native-aes-kit/ios/RCTAesCrypto/**",
 				);
 				INFOPLIST_FILE = "justpayng-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",

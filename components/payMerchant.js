@@ -1,52 +1,23 @@
 import React, {Component} from 'react'
-import {View, StyleSheet, StatusBar, TouchableHighlight, Alert} from 'react-native'
+import {View, StyleSheet, StatusBar, TouchableHighlight} from 'react-native'
 import {Text, Label, Icon, Button, Image} from 'native-base'
-import {Actions} from 'react-native-router-flux';
-import Fingerprint from './Finger';
-export default class Setpin extends Component {
+import {Actions} from 'react-native-router-flux'
+
+export default class payMerchant extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      pin:'',
+      amount:'',
       confirmPin:'',
       length:0,
-      temp:'',
-      instruction:'Choose 4 digit pin'
+      temp:''
     }
   }
   addDigit (digit) {
-    if (this.state.length < 4 && !this.state.confirming) {
-      this.setState({pin:this.state.pin+digit, length:this.state.length + 1, temp:this.state.temp +'*'})
-    }else if (this.state.length < 4 && this.state.confirming) {
-      this.setState({confirmPin:this.state.confirmPin+digit, length:this.state.length + 1, temp:this.state.temp +'*'})
-    }
-  }
-  removeDigit = () => {
-    if (!this.state.confirming) {
-      let pin = this.state.pin.substring(0, this.state.pin.length-1)
-      let temp = this.state.temp.substring(0, this.state.temp.length-1)
-      this.setState({pin, length:this.state.length - 1, temp})
-    }else {
-      let confirmPin = this.state.confirmPin.substring(0, this.state.confirmPin.length-1)
-      let temp = this.state.temp.substring(0, this.state.temp.length-1)
-      this.setState({confirmPin, length:this.state.length - 1, temp})
-    }
-
-  }
-  reEnterPassword = () => {
-    this.setState({reenter:true, length:0, temp:'', instruction:'Confirm 4 digit pin', confirming:true})
+    this.setState({amount:this.state.amount+digit, length:this.state.length + 1})
   }
   confirm = () => {
-    if (this.state.pin === this.state.confirmPin) {
-        this.setState({authenticated:true})
-
-    }else{
-      alert("Pins do not match! Try again")
-      this.setState({reenter:false, length:0, temp:'', instruction:'Choose 4 digit pin', confirming:false, pin:'', confirmPin:''})
-    }
-  }
-  handlePopupDismissed = () => {
-    return Actions.Addcard()
+    alert("Paying " + this.state.amount)
   }
   render () {
     return (
@@ -56,11 +27,13 @@ export default class Setpin extends Component {
           <Text style={styles.title}>JustPay.ng</Text>
           <Text style={styles.subtitle}>Just pay, effortlessly</Text>
         </View>
-        <Text style={styles.instruction}>{this.state.instruction}</Text>
+        <View style={{justifyContent:'center'}}>
+          <Text style={styles.instruction}>JustPay.ng Obaino & Sons Nig. Ltd.</Text>
+        </View>
         <View style={styles.container1}>
           <View style={{width:50}}></View>
           <View style={styles.pinContainer}>
-            <Text style={styles.pin}>{this.state.temp}</Text>
+            <Text style={styles.pin}>{this.state.amont}</Text>
           </View>
           {this.state.length > 0 &&
           <Button transparent onPress={this.removeDigit}>
@@ -103,7 +76,9 @@ export default class Setpin extends Component {
             </TouchableHighlight>
           </View>
           <View style={styles.set}>
-            <Text style={styles.number}></Text>
+            <TouchableHighlight style={styles.highlight} underlayColor='white' activeOpacity={0.7} onPress={()=>this.addDigit('.')}>
+              <Text style={styles.number}>.</Text>
+            </TouchableHighlight>
             <TouchableHighlight style={styles.highlight} underlayColor='white' activeOpacity={0.7} onPress={()=>this.addDigit('0')}>
               <Text style={styles.number}>0</Text>
             </TouchableHighlight>
@@ -112,8 +87,12 @@ export default class Setpin extends Component {
 
         </View>
 
+        <View style={{flexDirection:'row', justifyContent:'center'}}>
+          <Button info><Text> CONTINUE </Text></Button>
+        </View>
+
         <View style={styles.buttonContainer}>
-          {this.state.length === 4 &&
+          {this.state.length > 0 &&
             <View >
               {this.state.reenter ?
                 <TouchableHighlight onPress={this.confirm} >
@@ -125,7 +104,6 @@ export default class Setpin extends Component {
             </View>
         }
         </View>
-        {this.state.authenticated && <Fingerprint handlePopupDismissed={this.handlePopupDismissed} />}
       </View>
     )
   }
@@ -154,7 +132,8 @@ const styles = StyleSheet.create({
   },
   instruction:{
     color:'white',
-    fontSize:18,
+    fontFamily:'Helvetica-Bold',
+    fontSize:20,
     padding:10,
     margin:10
   },

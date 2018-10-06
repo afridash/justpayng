@@ -11,7 +11,7 @@ import {
   Lightbox
 } from 'react-native-router-flux'
 import Index from './components/Index'
-import Camera from './components/Camera'
+//import Camera from './components/Camera'
 import Footer from './components/Footer'
 import Contacts from './components/Contacts'
 import History from './components/History'
@@ -26,15 +26,15 @@ import Fetching from './components/Fetching'
 import Merchant from './components/Merchant'
 import Amount from './components/Amount'
 import Profile from './components/Profile'
-
+import payContact from './components/payContact'
+import payMerchant from './components/payMerchant'
+import validateMerchant from './components/validateMerchant'
 const reducerCreate = params => {
   const defaultReducer = new Reducer(params);
   return (state, action) => {
     return defaultReducer(state, action);
   };
 };
-
-
 type Props = {};
 export default class App extends Component<Props> {
   render() {
@@ -49,7 +49,7 @@ export default class App extends Component<Props> {
                 key="root"
               >
                 <Scene key='index' initial component={Index} />
-                <Scene key='Camera' component={Camera} />
+                {/* <Scene key='Camera' component={Camera} /> */}
                 <Scene key='Signup' component={Signup} />
                 <Scene key='Setpin' component={Setpin} />
                 <Scene key="Addcard" component={AddCard} />
@@ -59,7 +59,7 @@ export default class App extends Component<Props> {
                 <Scene key="Fetch" component={Fetching} />
                 <Scene key="Merchant" component={Merchant} />
                 <Scene key="Amount" component={Amount} />
-                <Scene key="Profile" initial component={Profile} />
+                <Scene key="Profile" component={Profile} />
                 <Scene
                   key="footer"
                   hideNavBar={true}

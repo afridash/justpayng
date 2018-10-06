@@ -137,7 +137,7 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-camera')
+    implementation project(':react-native-aes-kit')
     implementation "com.google.firebase:firebase-messaging:17.3.2"
     implementation 'me.leolin:ShortcutBadger:1.1.21@aar'
     implementation project(':react-native-contacts')

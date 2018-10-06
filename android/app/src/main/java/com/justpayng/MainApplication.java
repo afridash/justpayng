@@ -3,11 +3,11 @@ package com.justpayng;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import cc.rocwang.aescrypto.AesCryptoPackage;
 import org.reactnative.camera.RNCameraPackage;
 import com.rt2zz.reactnativecontacts.ReactNativeContacts;
 import com.hieuvp.fingerprint.ReactNativeFingerprintScannerPackage;
 import io.invertase.firebase.RNFirebasePackage;
-import org.reactnative.camera.RNCameraPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -30,6 +30,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new AesCryptoPackage(),
             new RNCameraPackage(),
             new ReactNativeContacts(),
             new ReactNativeFingerprintScannerPackage(),

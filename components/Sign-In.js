@@ -56,27 +56,6 @@ export default class PhoneAuthTest extends Component {
      if (this.unsubscribe) this.unsubscribe();
   }
 
-  signIn = () => {
-    const { phoneNumber } = this.state;
-    this.setState({ message: 'Sending code ...' });
-
-    firebase.auth().signInWithPhoneNumber(phoneNumber)
-      .then(confirmResult => this.setState({ confirmResult, message: 'Code has been sent!' }))
-      .catch(error => this.setState({ message: `Sign In With Phone Number Error: ${error.message}` }));
-  };
-
-  confirmCode = () => {
-    const { codeInput, confirmResult } = this.state;
-
-    if (confirmResult && codeInput.length) {
-      confirmResult.confirm(codeInput)
-        .then((user) => {
-          this.setState({ message: 'Code Confirmed!' });
-        })
-        .catch(error => this.setState({ message: `Code Confirm Error: ${error.message}` }));
-    }
-  };
-
   signOut = () => {
     firebase.auth().signOut();
   }

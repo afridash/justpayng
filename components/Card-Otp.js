@@ -1,12 +1,26 @@
 import React, {Component} from 'react'
 import {View, StyleSheet, StatusBar, ScrollView, KeyboardAvoidingView, Image} from 'react-native'
 import {Text, Form, Item, Input, Label, Icon, Button} from 'native-base'
-import {Actions} from 'react-native-router-flux'
+import {Actions} from 'react-native-router-flux';
+import firebase from 'react-native-firebase';
 export default class CardOtp extends Component {
   constructor (props) {
     super(props)
     this.state = {}
   }
+  confirmCode = () => {
+    const { codeInput } = this.state;
+    if (this.props.confirmResult && codeInput.length) {
+      let confirmResult = this.props.confirmResult
+      confirmResult.confirm(codeInput)
+        .then((user) => {
+          return Actions.Profile()
+        })
+        .catch(error => {
+          alert("Errors")
+        });
+    }
+  };
   render () {
     return (
       <View style={styles.container}>
@@ -17,25 +31,7 @@ export default class CardOtp extends Component {
             <Text style={styles.subtitle}>Just pay, effortlessly</Text>
           </View>
           <KeyboardAvoidingView behavior="padding" enabled>
-            <Form style={styles.form}>
-              <View style={styles.input}>
-                <Label style={styles.label}>Phone Number:</Label>
-                        <Item regular>
-                          <Input style={{backgroundColor:'white'}} keyboardType={'numeric'} placeholder='+234 81* *** **98' />
-                        </Item>
-              </View>
-              <View style={styles.input}>
-                <Label style={styles.label}>OTP:</Label>
-                        <Item regular>
-                          <Input style={{backgroundColor:'white'}} keyboardType={'numeric'} placeholder='otp..' />
-                        </Item>
-                <Text style={styles.info}>Enter the one time pin sent to the phone number displayed above</Text>
-              </View>
 
-              <View style={styles.button}>
-                <Button onPress={Actions.Profile} primary><Text> Continue </Text></Button>
-              </View>
-              </Form>
           </KeyboardAvoidingView>
         </ScrollView>
       </View>

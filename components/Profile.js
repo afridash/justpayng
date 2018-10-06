@@ -22,7 +22,7 @@ export default class Profile extends Component {
                 <View style={styles.imageContainer}>
                   <Image source={require('../assets/1.png')} style={styles.image} resizeMode={'contain'} />
                   <Text style={styles.merchant}>
-                    John Philips Doe
+                    Richard I. Igbiriki
                   </Text>
                 </View>
                 <View>
@@ -38,8 +38,8 @@ export default class Profile extends Component {
                     <Text style={styles.subtitle}>
                        Residential address:
                     </Text>
-                    <Text style={{marginTop:10}}>
-                       No 12, Jason street, Lagos
+                    <Text style={{marginTop:10, flex:1}}>
+                       &nbsp;No 12, Azikoro Village Yenagoa, Lagos
                     </Text>
                   </View>
                   <View style={{flexDirection:'row'}}>
@@ -63,7 +63,7 @@ export default class Profile extends Component {
                         State of Origin:
                     </Text>
                     <Text style={{marginTop:10}}>
-                         Lagos
+                         Bayelsa
                     </Text>
                   </View>
                   <View style={{flexDirection:'row'}}>
@@ -82,7 +82,7 @@ export default class Profile extends Component {
           <View></View>
         </View>
         <View style={styles.button}>
-          <Button primary onPress = {()=> alert("Scan fingerPrint")}><Text> Continue </Text></Button>
+          <Button primary onPress = {Actions.Setpin}><Text> Continue </Text></Button>
         </View>
 
       </View>
