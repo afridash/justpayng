@@ -46,7 +46,7 @@ export default class validateMerchant extends Component {
         </View>
 
         <View style={{flexDirection:'row', justifyContent:'center', padding: 10}}>
-          <Button info><Text> CONTINUE </Text></Button>
+          <Button info onPress={Actions.payMerchant}><Text> CONTINUE </Text></Button>
         </View>
 
       </View>
