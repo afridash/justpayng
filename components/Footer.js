@@ -12,7 +12,7 @@ export default class Footer_Component extends Component {
   }
   render() {
     const tabs = [];
-    this.props.navigationState.routes.forEach((scene) => {
+    this.props.navigation.state.routes.forEach((scene) => {
       const { params } = scene.routes[0];
       tabs.push(
         <Button
@@ -20,20 +20,12 @@ export default class Footer_Component extends Component {
           vertical
           active={_.includes(Actions.currentScene, params.tab)}
           onPress={() => Actions[params.tab]()}
+          badge={params.badge}
         >
-          <Icon type="FontAwesome" name={params.icon} />
+          <Icon type="FontAwesome"  name={params.icon} />
         </Button>
       );
     })
-    var btn = <Button
-      key="Camera"
-      vertical
-      onPress={() => Actions.Camera()}
-      >
-      <Icon type="FontAwesome" name='camera' />
-    </Button>
-    tabs.splice(1, 0, btn)
-
     return (
       <StyleProvider style={getTheme(platform)}>
       <Footer>

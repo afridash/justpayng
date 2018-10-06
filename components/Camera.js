@@ -9,7 +9,7 @@ import {
   Linking,
 } from 'react-native';
 import {Button, Icon} from 'native-base'
-//import QRCodeScanner from 'react-native-qrcode-scanner';
+import QRCodeScanner from 'react-native-qrcode-scanner';
 import {Actions} from 'react-native-router-flux'
 export default class ScanScreen extends Component {
   onSuccess(e) {
@@ -22,16 +22,16 @@ export default class ScanScreen extends Component {
         onRead={this.onSuccess.bind(this)}
         topContent={
           <View style={{marginTop:20}}>
-            <Button onPress={Actions.Contacts} transparent><Icon name='ios-close' style={[styles.icons, {fontSize:40}]} /></Button>
+            <Button onPress={() => Actions.Contacts()} transparent><Icon name='ios-close' style={[styles.icons, {fontSize:40}]} /></Button>
           </View>
         }
         bottomContent={
           <View style={styles.bottomContent}>
             <View>
-              <Button onPress={Actions.History} transparent><Icon type="FontAwesome" name='history' style={styles.icons} /></Button>
+              <Button onPress={() => Actions.History()} transparent><Icon type="FontAwesome" name='history' style={styles.icons} /></Button>
             </View>
             <View>
-              <Button onPress={Actions.Contacts} transparent><Icon type="FontAwesome" name='dollar' style={styles.icons} /></Button>
+              <Button onPress={()=>Actions.Contacts()} transparent><Icon type="FontAwesome" name='dollar' style={styles.icons} /></Button>
             </View>
           </View>
         }

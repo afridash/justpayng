@@ -77,6 +77,8 @@ PODS:
     - React
   - react-native-camera/RN (1.3.0):
     - React
+  - react-native-contacts (2.2.4):
+    - React
   - React/Core (0.11.0)
   - ReactNativePermissions (1.1.1):
     - React
@@ -86,6 +88,7 @@ DEPENDENCIES:
   - Firebase/Core (~> 5.9.0)
   - Firebase/Messaging (~> 5.9.0)
   - react-native-camera (from `../node_modules/react-native-camera`)
+  - react-native-contacts (from `../node_modules/react-native-contacts`)
   - ReactNativePermissions (from `../node_modules/react-native-permissions`)
 
 SPEC REPOS:
@@ -107,6 +110,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   react-native-camera:
     :path: "../node_modules/react-native-camera"
+  react-native-contacts:
+    :path: "../node_modules/react-native-contacts"
   ReactNativePermissions:
     :path: "../node_modules/react-native-permissions"
 
@@ -125,8 +130,9 @@ SPEC CHECKSUMS:
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
   react-native-camera: ec435a5b2498faa288b4574e005d5c1021f18608
+  react-native-contacts: 1a8913219e54d1fa20e817b99d9b42b9ec98558d
   ReactNativePermissions: 9f2d9c45c98800795e6c2ed330e25d11a66a8169
 
-PODFILE CHECKSUM: d5efdcd1ec2f097cba58d97f1561d3f99db61ddf
+PODFILE CHECKSUM: 52ca64a6a6f4d7873d4ce9c92260aa0e81f357b7
 
 COCOAPODS: 1.5.3

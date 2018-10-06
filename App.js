@@ -11,7 +11,7 @@ import {
   Lightbox
 } from 'react-native-router-flux'
 import Index from './components/Index'
-//import Camera from './components/Camera'
+import Camera from './components/Camera'
 import Footer from './components/Footer'
 import Contacts from './components/Contacts'
 import History from './components/History'
@@ -51,8 +51,8 @@ export default class App extends Component<Props> {
                 hideNavBar
                 key="root"
               >
-                <Scene key=''   component={Index} />
-                {/* <Scene key='Camera' component={Camera} /> */}
+                <Scene key='index'  component={Index} />
+                <Scene key='Camera' component={Camera} />
                 <Scene key='Signup' component={Signup} />
                 <Scene key='Setpin' component={Setpin} />
                 <Scene key="Addcard" component={AddCard} />
@@ -64,7 +64,7 @@ export default class App extends Component<Props> {
                 <Scene key="Amount" component={Amount} />
                 <Scene key="Profile"  component={Profile} />
                 <Scene key="Bank"  component={Bank} />
-                <Scene key="payMerchant"  initial component={payMerchant} />
+                <Scene key="payMerchant"   component={payMerchant} />
                 <Scene key="validateMerchant"   component={validateMerchant} />
                 <Scene key="payContact"  component={payContact} />
 
@@ -72,6 +72,7 @@ export default class App extends Component<Props> {
                   key="footer"
                   hideNavBar={true}
                   tabs={true}
+                  initial
                   tabBarPosition={'bottom'}
                   tabBarComponent={Footer}
                   >
