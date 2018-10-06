@@ -48,7 +48,7 @@ export default class App extends Component<Props> {
                 hideNavBar
                 key="root"
               >
-                <Scene key='index'  component={Index} />
+                <Scene key='index'  initial component={Index} />
                 {/* <Scene key='Camera' component={Camera} /> */}
                 <Scene key='Signup' component={Signup} />
                 <Scene key='Setpin' component={Setpin} />
@@ -59,7 +59,7 @@ export default class App extends Component<Props> {
                 <Scene key="Fetch" component={Fetching} />
                 <Scene key="Merchant" component={Merchant} />
                 <Scene key="Amount" component={Amount} />
-                <Scene key="Profile" initial component={Profile} />
+                <Scene key="Profile"  component={Profile} />
                 <Scene
                   key="footer"
                   hideNavBar={true}

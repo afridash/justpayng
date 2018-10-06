@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, StyleSheet, StatusBar, TouchableHighlight} from 'react-native'
+import {View, StyleSheet, StatusBar, TouchableHighlight, Alert} from 'react-native'
 import {Text, Label, Icon, Button, Image} from 'native-base'
 import {Actions} from 'react-native-router-flux'
 export default class Setpin extends Component {
@@ -12,6 +12,17 @@ export default class Setpin extends Component {
       temp:'',
       instruction:'Choose 4 digit pin'
     }
+  }
+  show () {
+    Alert.alert(
+  'FingerPrint Authentication',
+  'Allow device to use fingerprint?',
+  [
+    {text: 'Yes', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+    {text: 'NO', onPress: () => console.log('OK Pressed')},
+  ],
+  { cancelable: false }
+)
   }
   addDigit (digit) {
     if (this.state.length < 4 && !this.state.confirming) {
@@ -112,7 +123,7 @@ export default class Setpin extends Component {
           {this.state.length === 4 &&
             <View >
               {this.state.reenter ?
-                <TouchableHighlight onPress={this.confirm} >
+                <TouchableHighlight onPress={()=>this.show()} >
                 <Text style={styles.button}> Confirm </Text>
               </TouchableHighlight> :
               <TouchableHighlight onPress={this.reEnterPassword} >

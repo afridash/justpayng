@@ -30,7 +30,7 @@ export default class Profile extends Component {
                     <Text style={styles.subtitle}>
                        Date of birth:
                     </Text>
-                    <Text style={{marginTop:10}}>
+                    <Text  style={{marginTop:10}}>
                        12th October, 1992
                     </Text>
                   </View>
@@ -82,7 +82,7 @@ export default class Profile extends Component {
           <View></View>
         </View>
         <View style={styles.button}>
-          <Button primary onPress = {()=> alert("Scan fingerPrint")}><Text> Continue </Text></Button>
+          <Button onPress={Actions.Setpin}><Text> Continue </Text></Button>
         </View>
 
       </View>
