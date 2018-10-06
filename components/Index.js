@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
 const slides = [
   {
     key: 'somethun',
-    title: 'Account',
-    text: 'Add phone\nChoose a unique transfer pin, and username',
+    title: 'Verify BVN',
+    text: '1. Verify BVN \n\n 2. Create a four digit transfer pin and finger print to be used for every transaction.',
     image: require('../assets/1.png'),
     imageStyle: styles.image,
     backgroundColor: '#febe29',
@@ -31,8 +31,8 @@ const slides = [
   },
   {
     key: 'somethun-dos',
-    title: 'Add Card',
-    text: 'Add your debit/credit card',
+    title: 'Add Account ',
+    text: '1.Select bank \n\n 2. Add your Account Number',
     image: require('../assets/2.png'),
     imageStyle: styles.image,
     backgroundColor: '#20c3d0',
@@ -42,7 +42,7 @@ const slides = [
   {
     key: 'somethun1',
     title: 'Congratulations!',
-    text: 'Scan QR codes to pay merchants\n\nPay family and friends using username',
+    text: '1.Scan QR codes to pay merchants\n\n 2.Pay family and friends using Phone Number\n\n 3. View transaction history',
     image: require('../assets/3.png'),
     imageStyle: styles.image,
     backgroundColor: '#22bcb5',

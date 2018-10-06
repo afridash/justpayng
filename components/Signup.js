@@ -19,29 +19,15 @@ export default class Signup extends Component {
           <KeyboardAvoidingView behavior="padding" enabled>
             <Form style={styles.form}>
               <View style={styles.input}>
-                <Item floatingLabel bordered>
-                  <Label style={styles.label}>Phone Number</Label>
-                  <Input style={styles.inputField} keyboardType={'numeric'} />
-                </Item>
-                <Text style={styles.otp}>Request OTP</Text>
+                <Label style={styles.label}>Enter BVN:</Label>
+                        <Item regular>
+                          <Input style={{backgroundColor:'white'}} keyboardType={'numeric'} placeholder='BVN Number' />
+                        </Item>
+                <Text style={styles.info}>Enter your eleven (11) digits bank verification number</Text>
               </View>
-              <View style={styles.input}>
-                <Item floatingLabel last>
-                  <Label style={styles.label}>OTP</Label>
-                  <Input style={styles.inputField} keyboardType={'numeric'} />
-                </Item>
-                <Text style={styles.info}>Enter pin sent to the phone number provided above. If pin doesn't arrive after 5 minutes, request for a new pin</Text>
-              </View>
-              <View style={styles.input}>
-                <Item success floatingLabel last>
-                  <Label style={styles.label}>Username</Label>
-                  <Input style={styles.inputField} />
-                  <Icon name='checkmark-circle' />
-                </Item>
-                <Text style={styles.info}>Select a username that will be associated with your account. Transfers would be made using this username</Text>
-              </View>
+
               <View style={styles.button}>
-                <Button onPress={Actions.Setpin} primary><Text> Continue </Text></Button>
+                <Button onPress={Actions.OTP} primary><Text> Continue </Text></Button>
               </View>
               </Form>
           </KeyboardAvoidingView>
@@ -72,7 +58,7 @@ const styles = StyleSheet.create({
     fontStyle:'italic'
   },
   form:{
-    marginTop:30,
+    marginTop:50,
   },
   input:{
     padding:20
@@ -85,7 +71,8 @@ const styles = StyleSheet.create({
   },
   label:{
     color:'white',
-    fontSize:20
+    fontSize:20,
+    marginBottom:15
   },
   info:{
     fontSize:10,

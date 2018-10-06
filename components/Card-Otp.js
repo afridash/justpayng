@@ -19,16 +19,21 @@ export default class CardOtp extends Component {
           <KeyboardAvoidingView behavior="padding" enabled>
             <Form style={styles.form}>
               <View style={styles.input}>
-                <Item floatingLabel last>
-                  <Label style={styles.label}>OTP</Label>
-                  <Input style={styles.inputField} keyboardType={'numeric'} />
-                </Item>
+                <Label style={styles.label}>Phone Number:</Label>
+                        <Item regular>
+                          <Input style={{backgroundColor:'white'}} keyboardType={'numeric'} placeholder='+234 81* *** **98' />
+                        </Item>
               </View>
-              <View style={styles.imageContainer}>
-                <Image source={require('../assets/visa.png')} style={styles.image}  />
+              <View style={styles.input}>
+                <Label style={styles.label}>OTP:</Label>
+                        <Item regular>
+                          <Input style={{backgroundColor:'white'}} keyboardType={'numeric'} placeholder='otp..' />
+                        </Item>
+                <Text style={styles.info}>Enter the one time pin sent to the phone number displayed above</Text>
               </View>
+
               <View style={styles.button}>
-                <Button primary onPress={Actions.Processing}><Text> Continue </Text></Button>
+                <Button onPress={Actions.Profile} primary><Text> Continue </Text></Button>
               </View>
               </Form>
           </KeyboardAvoidingView>
