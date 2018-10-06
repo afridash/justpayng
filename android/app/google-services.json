@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "489123448757",
+    "firebase_url": "https://justpayng.firebaseio.com",
+    "project_id": "justpayng",
+    "storage_bucket": "justpayng.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489123448757:android:b2c9d06a6e25e093",
+        "android_client_info": {
+          "package_name": "com.justpayng"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489123448757-l8c61tg8eog43gnct5f9jsva49s2c5kt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.justpayng",
+            "certificate_hash": "bc8306fd9eab67f5e46a4362d3c778c36b5898a2"
+          }
+        },
+        {
+          "client_id": "489123448757-2cvihbvdklg8b56gi50g9hft20viu8so.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxmvNAFlbyWCWkWYVGTXYVy5AH8aBpM7M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489123448757-2cvihbvdklg8b56gi50g9hft20viu8so.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "489123448757-6srt6bbgb1fs1dqj01905trvk7v7k51a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.afridash.juspayng"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
