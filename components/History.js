@@ -13,7 +13,6 @@ export default class Contacts extends Component {
   render () {
     return (
       <Container>
-        <Header hasTabs />
         <Tabs>
           <Tab heading="Requests">
             <Requests />

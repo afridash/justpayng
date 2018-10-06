@@ -59,7 +59,7 @@ export default class App extends Component<Props> {
                 <Scene key="Amount" component={Amount} />
                 <Scene key="Profile" component={Profile} />
                 <Scene key="Bank"  component={Bank} />
-                <Scene key="payMerchant"     component={payMerchant} />
+                <Scene key="payMerchant"   component={payMerchant} />
                 <Scene key="validateMerchant"   component={validateMerchant} />
                 <Scene key="payContact"  component={payContact} />
                 <Scene
