@@ -1,24 +1,35 @@
 import React, {Component} from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {View, StyleSheet} from 'react-native'
+import { Container, Header, Left, Body, Right, Button, Icon, Content, Tab, Tabs, Title, Text } from 'native-base';
+import Requests from './Requests.js'
+import Transactions from './Transactions.js'
 
 export default class Contacts extends Component {
   constructor (props){
     super(props)
     this.state = {
-
     }
   }
   render () {
     return (
-      <View style={styles.container}>
-        <Text style={styles.text}>Hello World, this is History</Text>
-      </View>
+      <Container>
+        <Header hasTabs />
+        <Tabs>
+          <Tab heading="Requests">
+            <Requests />
+          </Tab>
+          <Tab heading="Transactions">
+            <Transactions />
+          </Tab>
+        </Tabs>
+      </Container>
     )
   }
 }
 
 const styles = StyleSheet.create({
   container:{
+    flex: 1,
     justifyContent:'center',
     alignItems:'center'
   },
