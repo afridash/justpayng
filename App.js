@@ -27,7 +27,9 @@ import Merchant from './components/Merchant'
 import Amount from './components/Amount'
 import Profile from './components/Profile'
 import Bank from './components/Bank'
-
+import payContact from './components/payContact'
+import payMerchant from './components/payMerchant'
+import validateMerchant from './components/validateMerchant'
 const reducerCreate = params => {
   const defaultReducer = new Reducer(params);
   return (state, action) => {
