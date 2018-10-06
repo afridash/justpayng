@@ -7,7 +7,7 @@ export default class Requests extends Component {
       <Container>
         <Content padder>
           <Card>
-            <CardItem header button onPress={() => alert("Request Sent!!")}>
+            <CardItem>
               <Text>Request: Time</Text>
             </CardItem>
             <CardItem>

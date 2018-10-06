@@ -13,7 +13,7 @@ export default class Transactions extends Component {
       <Container>
         <Content padder>
           <Card>
-            <CardItem header button onPress={() => alert("Request Sent!!")}>
+            <CardItem>
               <Text>Purchase: Time</Text>
             </CardItem>
             <CardItem>
