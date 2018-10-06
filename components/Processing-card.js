@@ -7,10 +7,10 @@ export default class Processing extends Component {
   }
   componentDidMount (){
     setTimeout(()=> {
-      Actions.CardAdded()
+      Actions.CardAdded({payee:this.props.payee})
     }, 6000)
   }
   render(){
-    return <Loading message="Paying Taiwo and Sons Ltd" />
+    return <Loading message={"Paying "+this.props.payee} />
   }
 }

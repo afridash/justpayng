@@ -9,11 +9,11 @@ class FingerprintPopup extends Component {
     FingerprintScanner
       .authenticate({ description: 'Your device supports fingerprint scanning, scan to use fingerprint for transactions'})
       .then(() => {
-        this.props.handlePopupDismissed();
+        this.props.handlePopupDismissed(true);
         Alert.alert('Authenticated successfully');
       })
       .catch((error) => {
-        this.props.handlePopupDismissed();
+        this.props.handlePopupDismissed(false);
         Alert.alert(error.message);
       });
   }

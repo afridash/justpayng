@@ -14,10 +14,10 @@ export default class CardAdded extends Component {
         <View style={styles.header}>
           <Icon type="FontAwesome" name="thumbs-up" style={styles.icon} />
           <Text style={styles.title}>Payment Successful! </Text>
-          <Text style={styles.subtitle}>Payment to Taiwo and Sons was completed successfully</Text>
+          <Text style={styles.subtitle}>Payment to {this.props.payee} was completed successfully</Text>
         </View>
         <View style={styles.button}>
-          <Button primary onPress={Actions.Camera}><Text> Continue </Text></Button>
+          <Button primary onPress={Actions.Contacts}><Text> Continue </Text></Button>
         </View>
       </View>
     )

@@ -56,7 +56,7 @@ export default class Setpin extends Component {
       this.setState({reenter:false, length:0, temp:'', instruction:'Choose 4 digit pin', confirming:false, pin:'', confirmPin:''})
     }
   }
-  handlePopupDismissed = () => {
+  handlePopupDismissed = (status) => {
     return Actions.Contacts()
   }
   render () {

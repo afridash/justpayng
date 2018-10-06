@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {View, StyleSheet, StatusBar, TouchableHighlight} from 'react-native'
 import {Text, Label, Icon, Button, Image} from 'native-base'
 import {Actions} from 'react-native-router-flux'
-export default class payContact extends Component {
+export default class PayContact extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -91,7 +91,7 @@ export default class payContact extends Component {
         </View>
         <View style={{flexDirection:'row', justifyContent:'space-around', marginBottom:10}}>
           <Button info><Text> REQUEST </Text></Button>
-          <Button success><Text> PAY </Text></Button>
+          <Button success onPress={()=>Actions.validateMerchant({payee:this.props.payee})}><Text> PAY </Text></Button>
         </View>
       </View>
     )

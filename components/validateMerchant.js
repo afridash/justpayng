@@ -1,7 +1,8 @@
-import React, {Component} from 'react'
-import {View, StyleSheet, StatusBar, TouchableHighlight, Alert} from 'react-native'
-import {Text, Label, Icon, Button, Image} from 'native-base'
-import {Actions} from 'react-native-router-flux'
+import React, {Component} from 'react';
+import {View, StyleSheet, StatusBar, TouchableHighlight, Alert} from 'react-native';
+import {Text, Label, Icon, Button, Image} from 'native-base';
+import {Actions} from 'react-native-router-flux';
+import Fingerprint from './Finger';
 export default class validateMerchant extends Component {
   constructor (props) {
     super(props)
@@ -10,7 +11,8 @@ export default class validateMerchant extends Component {
       confirmPin:'',
       length:0,
       temp:'',
-      instruction:'Choose 4 digit pin'
+      instruction:'Enter Pin',
+      authenticated:true
     }
   }
   show () {
@@ -54,6 +56,14 @@ export default class validateMerchant extends Component {
       alert("Pins do not match! Try again")
       this.setState({reenter:false, length:0, temp:'', instruction:'Choose 4 digit pin', confirming:false, pin:'', confirmPin:''})
     }
+  }
+  handlePopupDismissed = (status) => {
+    if (status) {
+      return Actions.Processing({payee:this.props.payee})
+    } else {
+      this.setState({authenticated:false})
+    }
+
   }
   render () {
     return (
@@ -120,7 +130,7 @@ export default class validateMerchant extends Component {
         </View>
 
         <View style={styles.buttonContainer}>
-
+            {this.state.authenticated && <Fingerprint handlePopupDismissed={this.handlePopupDismissed} />}
             <View >
               <TouchableHighlight onPress={Actions.Processing} >
                 <Text style={styles.button}> PAY </Text>
