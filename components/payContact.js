@@ -21,22 +21,25 @@ export default class payContact extends Component {
   render () {
     return (
       <View style={styles.container}>
+        <Button transparent style={{marginTop:10}} >
+          <Icon name="chevron-left" type="FontAwesome" style={{fontSize:18, color:'white'}} />
+        </Button>
       <StatusBar barStyle="light-content" />
         <View style={styles.header}>
           <Text style={styles.title}>JustPay.ng</Text>
           <Text style={styles.subtitle}>Just pay, effortlessly</Text>
         </View>
         <View style={{justifyContent:'center'}}>
-          <Text style={styles.instruction}>{"JustPay.ng "+ this.props.payee}</Text>
+          <Text style={styles.instruction}>{"To: "+ this.props.payee}</Text>
         </View>
         <View style={styles.container1}>
           <View style={{width:50}}></View>
           <View style={styles.pinContainer}>
-            <Text style={styles.pin}>{this.state.amont}</Text>
+            <Text style={styles.pin}>{this.state.amount}</Text>
           </View>
           {this.state.length > 0 &&
           <Button transparent onPress={this.removeDigit}>
-            <Icon name="ios-backspace" style={{fontSize:35, color:'white'}} />
+            <Icon name="ios-backspace" style={{fontSize:30, color:'white', marginBottom:5}} />
           </Button>
         }
         </View>
@@ -81,28 +84,14 @@ export default class payContact extends Component {
             <TouchableHighlight style={styles.highlight} underlayColor='white' activeOpacity={0.7} onPress={()=>this.addDigit('0')}>
               <Text style={styles.number}>0</Text>
             </TouchableHighlight>
-            <Text style={styles.number}></Text>
+            <TouchableHighlight style={styles.highlight} underlayColor='white' activeOpacity={0.7} onPress={()=>this.addDigit('0')}>
+              <Text style={styles.number}></Text>
+            </TouchableHighlight>
           </View>
-
         </View>
-
-        <View style={{flexDirection:'row', justifyContent:'space-around'}}>
+        <View style={{flexDirection:'row', justifyContent:'space-around', marginBottom:10}}>
           <Button info><Text> REQUEST </Text></Button>
           <Button success><Text> PAY </Text></Button>
-        </View>
-
-        <View style={styles.buttonContainer}>
-          {this.state.length > 0 &&
-            <View >
-              {this.state.reenter ?
-                <TouchableHighlight onPress={this.confirm} >
-                <Text style={styles.button}> Confirm </Text>
-              </TouchableHighlight> :
-              <TouchableHighlight onPress={this.reEnterPassword} >
-                <Text style={styles.button}> Continue </Text>
-              </TouchableHighlight>}
-            </View>
-        }
         </View>
       </View>
     )
@@ -116,7 +105,7 @@ const styles = StyleSheet.create({
   header:{
     justifyContent:'center',
     alignItems:'center',
-    marginTop:60,
+    marginTop:40,
     marginBottom:10,
     flex:0.6
   },

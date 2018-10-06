@@ -30,8 +30,9 @@ export default class Requests extends Component {
           <FlatList
           data={this.state.data}
           renderItem={
-            ({item}) => <Card>
-            <CardItem header button onPress={() => alert("Request Sent!!")}>
+            ({item}) =>
+          <Card>
+            <CardItem>
               <Text>Request: Time</Text>
             </CardItem>
             <CardItem>
@@ -53,7 +54,7 @@ export default class Requests extends Component {
           </Card>
           }
         />
-          
+
         </Content>
       </Container>
     );

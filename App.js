@@ -13,7 +13,7 @@ import {
 import Index from './components/Index'
 //import Camera from './components/Camera'
 import Footer from './components/Footer'
-import Contacts from './components/Contacts'
+import Contact from './components/Contact'
 import History from './components/History'
 import Settings from './components/Settings'
 import Signup from './components/Signup'
@@ -48,7 +48,6 @@ export default class App extends Component<Props> {
                 key="root"
               >
                 <Scene key='index' component={Index} />
-
                 {/* <Scene key='Camera' component={Camera} /> */}
                 <Scene key='Signup' component={Signup} />
                 <Scene key='Setpin' component={Setpin} />
@@ -82,11 +81,10 @@ export default class App extends Component<Props> {
                   initial
                   tab="Contacts"
                   icon="dollar"
-                  component={Contacts}
+                  component={Contact}
                   hideNavBar={true}
                 />
                 <Scene
-                  initial
                   tab="Settings"
                   key="Settings"
                   icon="user"
