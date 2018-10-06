@@ -51,7 +51,7 @@ export default class App extends Component<Props> {
                 hideNavBar
                 key="root"
               >
-                <Scene key='index'  component={Index} />
+                <Scene key='index' initial component={Index} />
                 <Scene key='Camera' component={Camera} />
                 <Scene key='Signup' component={Signup} />
                 <Scene key='Setpin' component={Setpin} />
@@ -72,12 +72,10 @@ export default class App extends Component<Props> {
                   key="footer"
                   hideNavBar={true}
                   tabs={true}
-                  initial
                   tabBarPosition={'bottom'}
                   tabBarComponent={Footer}
                   >
                 <Scene
-                  initial
                   key="History"
                   tab="History"
                   icon="history"

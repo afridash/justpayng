@@ -27,7 +27,7 @@ export default class payContact extends Component {
           <Text style={styles.subtitle}>Just pay, effortlessly</Text>
         </View>
         <View style={{justifyContent:'center'}}>
-          <Text style={styles.instruction}>JustPay.ng Richard Igbiriki</Text>
+          <Text style={styles.instruction}>{"JustPay.ng "+ this.props.payee}</Text>
         </View>
         <View style={styles.container1}>
           <View style={{width:50}}></View>
