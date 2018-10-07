@@ -12,53 +12,54 @@ export default class Signup extends Component {
       hash:'',
       aes_key:'',
       iv_key:'',
-      bvn:'22368566143',
+      bvn:' ',
       phoneNumber:'+2349037233559'
     }
   }
   componentDidMount () {
-    let base64 = Base64.encode(this.state.bvn)
-    fetch('https://hackathon.nibss-plc.com.ng/hackathon/GenerateCredentials', {
-      method:'POST',
-      mode:'cors',
-      headers: {
-        'content-type':'application/json',
-        'accept':'application/json',
-        'UserCode': base64
-      }
-    }).then(res => {
-    this.setState({
-      hash:res.headers.map.hash,
-      aes_key:res.headers.map.aes_key,
-      iv_key:res.headers.map.ivkey
-    });
-    console.log(res.headers.map);
-    }
-    ).catch(error => {
-      alert(error)
-    })
+    // let base64 = Base64.encode(this.state.bvn)
+    // fetch('https://hackathon.nibss-plc.com.ng/hackathon/GenerateCredentials', {
+    //   method:'POST',
+    //   mode:'cors',
+    //   headers: {
+    //     'content-type':'application/json',
+    //     'accept':'application/json',
+    //     'UserCode': base64
+    //   }
+    // }).then(res => {
+    // this.setState({
+    //   hash:res.headers.map.hash,
+    //   aes_key:res.headers.map.aes_key,
+    //   iv_key:res.headers.map.ivkey
+    // });
+    // console.log(res.headers.map);
+    // }
+    // ).catch(error => {
+    //   alert(error)
+    // })
   }
   submitBVN = () => {
-    var json = {
-      BVN:Base64.encode(this.state.bvn)
-    }
-    let string = JSON.stringify(json)
-    let encryptedString = AesCrypto.encrypt(string, this.state.aes_key, this.state.iv_key)
-    let base64 = Base64.encode(encryptedString.toString())
-    fetch('https://hackathon.nibss-plc.com.ng/hackathon/BVNSearch',{
-      method:'POST',
-      mode:'cors',
-      headers:{
-        'content-type':'application/json',
-        'accept':'application/json',
-        'hash':this.state.hash
-      },
-      body:base64
-    }).then(res => {
-      this.signIn()
-    }).catch(errror => {
-      alert(errror)
-    })
+    //var json = {
+    //   BVN:Base64.encode(this.state.bvn)
+    // }
+    // let string = JSON.stringify(json)
+    // let encryptedString = AesCrypto.encrypt(string, this.state.aes_key, this.state.iv_key)
+    // let base64 = Base64.encode(encryptedString.toString())
+    // fetch('https://hackathon.nibss-plc.com.ng/hackathon/BVNSearch',{
+    //   method:'POST',
+    //   mode:'cors',
+    //   headers:{
+    //     'content-type':'application/json',
+    //     'accept':'application/json',
+    //     'hash':this.state.hash
+    //   },
+    //   body:base64
+    // }).then(res => {
+    //
+    // }).catch(errror => {
+    //   alert(errror)
+    // })
+    this.signIn()
   }
   signIn = () => {
     const { phoneNumber } = this.state;

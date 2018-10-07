@@ -14,6 +14,9 @@ export default class Requests extends Component {
         {key: 'Amaka Eze', amount:"12,000"},
         {key: 'Preye Ebi', amount:"2,000,000"},
         {key: 'Joel Tari', amount:"10,000"},
+        {key: 'Ebi Owei', amount:"10,000"},
+        {key: 'Amakiri John', amount:"20,000"},
+        {key: 'Tarila Tariebi', amount:"23,000"},
       ],
     }
   }

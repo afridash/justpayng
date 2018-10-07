@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>justpayng</string>
+	<string>JustPayNG</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -50,10 +50,10 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Allow Justpay.ng to use camera as scanner</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
 	<key>NSContactsUsageDescription</key>
 	<string>Alllow JustPay.ng to access your contacts</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Allow JustPay.ng to access microphone for video use</string>
 	<key>NSPhotoLibraryUsageDescription</key>

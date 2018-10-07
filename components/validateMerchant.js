@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, StatusBar, TouchableHighlight, Alert} from 'react-native';
-import {Text, Label, Icon, Button, Image, AsyncStorage} from 'native-base';
+import {View, StyleSheet, StatusBar, TouchableHighlight, Alert, AsyncStorage} from 'react-native';
+import {Text, Label, Icon, Button, Image} from 'native-base';
 import {Actions} from 'react-native-router-flux';
 import Fingerprint from './Finger';
 import firebase from 'react-native-firebase';

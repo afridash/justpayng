@@ -27,6 +27,7 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		1C62575B19886C2124E87217 /* libPods-justpayng-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 701AA76333D241C9A2DC7068 /* libPods-justpayng-tvOSTests.a */; };
+		21C519C82169D2EE00F498AE /* justpay.png in Resources */ = {isa = PBXBuildFile; fileRef = 21C519C72169D2EE00F498AE /* justpay.png */; };
 		21F71E7B2166D4A900BBCBE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21F71E7A2166D4A800BBCBE4 /* GoogleService-Info.plist */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -383,6 +384,7 @@
 		21C518A52168EA9F00F498AE /* permissions.ios.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = permissions.ios.js; path = "../node_modules/react-native-permissions/lib/permissions.ios.js"; sourceTree = "<group>"; };
 		21C518A72168EAB800F498AE /* libReactNativePermissions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReactNativePermissions.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C519062168ED0800F498AE /* libReactNativePermissions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReactNativePermissions.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		21C519C72169D2EE00F498AE /* justpay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = justpay.png; path = ../../../Downloads/justpay.png; sourceTree = "<group>"; };
 		21F71E462166C21100BBCBE4 /* justpayng.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = justpayng.entitlements; path = justpayng/justpayng.entitlements; sourceTree = "<group>"; };
 		21F71E7A2166D4A800BBCBE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C149ECFEC6442C1A3F27FD6 /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
@@ -568,6 +570,7 @@
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				21C519C72169D2EE00F498AE /* justpay.png */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				21F71E7A2166D4A800BBCBE4 /* GoogleService-Info.plist */,
@@ -1260,6 +1263,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				21C519C82169D2EE00F498AE /* justpay.png in Resources */,
 				903EC1FCD008446ABE505135 /* Entypo.ttf in Resources */,
 				B2D7B991340E462EB5A28A47 /* EvilIcons.ttf in Resources */,
 				80FD8CF1A39149AC91C0A290 /* Feather.ttf in Resources */,

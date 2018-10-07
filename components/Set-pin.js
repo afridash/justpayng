@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, StyleSheet, StatusBar, TouchableHighlight, Alert} from 'react-native'
+import {View, StyleSheet, StatusBar, TouchableHighlight, Alert, AsyncStorage} from 'react-native'
 import {Text, Label, Icon, Button, Image} from 'native-base'
 import {Actions} from 'react-native-router-flux';
 import Fingerprint from './Finger';
@@ -57,6 +57,7 @@ export default class Setpin extends Component {
     }
   }
   handlePopupDismissed = (status) => {
+    AsyncStorage.setItem('finishedTutorial', 'true')
     return Actions.Contacts()
   }
   render () {

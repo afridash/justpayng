@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Content, Header, Card, CardItem, Thumbnail, Text, Left, Body, Right, Button, Icon, Title,  } from 'native-base';
-import { FlatList, ListItem, View, Image, StyleSheet, TouchableHighlight,AsyncStorage } from "react-native";
+import { FlatList, ListItem, View, Image, StyleSheet, TouchableHighlight, AsyncStorage } from "react-native";
 import Contacts from 'react-native-contacts';
 import {Actions} from 'react-native-router-flux';
 import firebase from 'react-native-firebase';
@@ -102,7 +102,7 @@ export default class Contact extends Component {
     };
     this.ref = firebase.database().ref('users').child('+2349037233559')
   }
-  componentDidMount () {
+  async componentDidMount () {
     firebase.messaging().getToken()
       .then(fcmToken => {
         if (fcmToken) {
@@ -119,6 +119,10 @@ export default class Contact extends Component {
       const notification: Notification = notificationOpen.notification;
       Actions.validateMerchant({payee:'Ogiriki Mabel', operation_type:'pay', amount:"50,000"})
   });
+  let finishedTutorial = await AsyncStorage.getItem('finishedTutorial')
+  if (!finishedTutorial || finishedTutorial !== undefined) {
+    return Actions.index()
+  }
   }
   render() {
     return (
